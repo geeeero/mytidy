@@ -1,0 +1,492 @@
+In file included from Rengine.c:4:0:
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniParse’:
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:121:14: note: in expansion of macro ‘SEXP2L’
+       return SEXP2L(pstr);
+              ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniEval’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:135:36: note: in expansion of macro ‘L2SEXP’
+       SEXP es = R_NilValue, exps = L2SEXP(exp);
+                                    ^
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:136:23: note: in expansion of macro ‘L2SEXP’
+       SEXP eval_env = L2SEXP(rho);
+                       ^
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:159:14: note: in expansion of macro ‘SEXP2L’
+       return SEXP2L(es);
+              ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniAssign’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:179:20: note: in expansion of macro ‘L2SEXP’
+     s.rho = rhoL ? L2SEXP(rhoL) : R_GlobalEnv;
+                    ^
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:180:20: note: in expansion of macro ‘L2SEXP’
+     s.val = valL ? L2SEXP(valL) : R_NilValue;
+                    ^
+In file included from jri.h:6:0,
+                 from Rengine.c:4:
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniProtect’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+/usr/share/R/include/Rinternals.h:691:31: note: in definition of macro ‘PROTECT’
+ #define PROTECT(s) Rf_protect(s)
+                               ^
+Rengine.c:189:10: note: in expansion of macro ‘L2SEXP’
+  PROTECT(L2SEXP(exp));
+          ^
+In file included from Rengine.c:4:0:
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniRelease’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:201:27: note: in expansion of macro ‘L2SEXP’
+  if (exp) R_ReleaseObject(L2SEXP(exp));
+                           ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniPreserve’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:207:28: note: in expansion of macro ‘L2SEXP’
+  if (exp) R_PreserveObject(L2SEXP(exp));
+                            ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniPrintValue’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:213:22: note: in expansion of macro ‘L2SEXP’
+  Rf_PrintValue(exp ? L2SEXP(exp) : R_NilValue);
+                      ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniParentEnv’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+jri.h:21:28: note: in definition of macro ‘SEXP2L’
+ #define SEXP2L(s) ((jlong)(s))
+                            ^
+Rengine.c:219:30: note: in expansion of macro ‘L2SEXP’
+   return SEXP2L(ENCLOS(exp ? L2SEXP(exp) : R_GlobalEnv));
+                              ^
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:219:10: note: in expansion of macro ‘SEXP2L’
+   return SEXP2L(ENCLOS(exp ? L2SEXP(exp) : R_GlobalEnv));
+          ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniFindVar’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+jri.h:21:28: note: in definition of macro ‘SEXP2L’
+ #define SEXP2L(s) ((jlong)(s))
+                            ^
+Rengine.c:228:38: note: in expansion of macro ‘L2SEXP’
+  return SEXP2L(Rf_findVar(sym, rho ? L2SEXP(rho) : R_GlobalEnv));
+                                      ^
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:228:9: note: in expansion of macro ‘SEXP2L’
+  return SEXP2L(Rf_findVar(sym, rho ? L2SEXP(rho) : R_GlobalEnv));
+         ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniListEnv’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+jri.h:21:28: note: in definition of macro ‘SEXP2L’
+ #define SEXP2L(s) ((jlong)(s))
+                            ^
+Rengine.c:234:35: note: in expansion of macro ‘L2SEXP’
+  return SEXP2L(R_lsInternal(rho ? L2SEXP(rho) : R_GlobalEnv, all));
+                                   ^
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:234:9: note: in expansion of macro ‘SEXP2L’
+  return SEXP2L(R_lsInternal(rho ? L2SEXP(rho) : R_GlobalEnv, all));
+         ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniSpecialObject’:
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:241:18: note: in expansion of macro ‘SEXP2L’
+   case 0: return SEXP2L(R_NilValue);
+                  ^
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:242:18: note: in expansion of macro ‘SEXP2L’
+   case 1: return SEXP2L(R_GlobalEnv);
+                  ^
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:243:18: note: in expansion of macro ‘SEXP2L’
+   case 2: return SEXP2L(R_EmptyEnv);
+                  ^
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:244:18: note: in expansion of macro ‘SEXP2L’
+   case 3: return SEXP2L(R_BaseEnv);
+                  ^
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:245:18: note: in expansion of macro ‘SEXP2L’
+   case 4: return SEXP2L(R_UnboundValue);
+                  ^
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:246:18: note: in expansion of macro ‘SEXP2L’
+   case 5: return SEXP2L(R_MissingArg);
+                  ^
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:247:18: note: in expansion of macro ‘SEXP2L’
+   case 6: return SEXP2L(R_NaString);
+                  ^
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:248:18: note: in expansion of macro ‘SEXP2L’
+   case 7: return SEXP2L(R_BlankString);
+                  ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniXrefToJava’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:256:12: note: in expansion of macro ‘L2SEXP’
+  SEXP xp = L2SEXP(exp);
+            ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniJavaToXref’:
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:266:10: note: in expansion of macro ‘SEXP2L’
+   return SEXP2L(R_MakeExternalPtr(go, R_NilValue, R_NilValue));
+          ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniGetString’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:272:33: note: in expansion of macro ‘L2SEXP’
+       return jri_putString(env, L2SEXP(exp), 0);
+                                 ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniGetStringArray’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:279:38: note: in expansion of macro ‘L2SEXP’
+       return jri_putStringArray(env, L2SEXP(exp));
+                                      ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniGetIntArray’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:285:35: note: in expansion of macro ‘L2SEXP’
+       return jri_putIntArray(env, L2SEXP(exp));
+                                   ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniGetRawArray’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:291:36: note: in expansion of macro ‘L2SEXP’
+       return jri_putByteArray(env, L2SEXP(exp));
+                                    ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniGetBoolArrayI’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:297:37: note: in expansion of macro ‘L2SEXP’
+       return jri_putBoolArrayI(env, L2SEXP(exp));
+                                     ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniGetDoubleArray’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:303:38: note: in expansion of macro ‘L2SEXP’
+       return jri_putDoubleArray(env, L2SEXP(exp));
+                                      ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniGetVector’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:309:35: note: in expansion of macro ‘L2SEXP’
+     return jri_putSEXPLArray(env, L2SEXP(exp));
+                                   ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniExpType’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:315:25: note: in expansion of macro ‘L2SEXP’
+     return exp ? TYPEOF(L2SEXP(exp)) : 0;
+                         ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniPutString’:
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:335:12: note: in expansion of macro ‘SEXP2L’
+     return SEXP2L(jri_getString(env, s));
+            ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniPutStringArray’:
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:341:12: note: in expansion of macro ‘SEXP2L’
+     return SEXP2L(jri_getStringArray(env, a));
+            ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniPutIntArray’:
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:347:12: note: in expansion of macro ‘SEXP2L’
+     return SEXP2L(jri_getIntArray(env, a));
+            ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniPutRawArray’:
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:353:12: note: in expansion of macro ‘SEXP2L’
+     return SEXP2L(jri_getByteArray(env, a));
+            ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniPutBoolArrayI’:
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:359:12: note: in expansion of macro ‘SEXP2L’
+     return SEXP2L(jri_getBoolArrayI(env, a));
+            ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniPutBoolArray’:
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:365:12: note: in expansion of macro ‘SEXP2L’
+     return SEXP2L(jri_getBoolArray(env, a));
+            ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniPutDoubleArray’:
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:371:12: note: in expansion of macro ‘SEXP2L’
+     return SEXP2L(jri_getDoubleArray(env, a));
+            ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniPutVector’:
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:377:12: note: in expansion of macro ‘SEXP2L’
+     return SEXP2L(jri_getSEXPLArray(env, a));
+            ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniGetAttr’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:384:44: note: in expansion of macro ‘L2SEXP’
+     if (!an || an==R_NilValue || exp==0 || L2SEXP(exp)==R_NilValue) return 0;
+                                            ^
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:386:28: note: in expansion of macro ‘L2SEXP’
+         SEXP a = getAttrib(L2SEXP(exp), an);
+                            ^
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:387:34: note: in expansion of macro ‘SEXP2L’
+         return (a==R_NilValue)?0:SEXP2L(a);
+                                  ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniGetAttrNames’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:394:14: note: in expansion of macro ‘L2SEXP’
+     SEXP o = L2SEXP(exp);
+              ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniSetAttr’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:426:44: note: in expansion of macro ‘L2SEXP’
+     if (!an || an==R_NilValue || exp==0 || L2SEXP(exp)==R_NilValue) return;
+                                            ^
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:428:15: note: in expansion of macro ‘L2SEXP’
+     setAttrib(L2SEXP(exp), an, (attr==0)?R_NilValue:L2SEXP(attr));
+               ^
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:428:53: note: in expansion of macro ‘L2SEXP’
+     setAttrib(L2SEXP(exp), an, (attr==0)?R_NilValue:L2SEXP(attr));
+                                                     ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniInstallSymbol’:
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:441:12: note: in expansion of macro ‘SEXP2L’
+     return SEXP2L(jri_installString(env, s));
+            ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniGetSymbolName’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:447:32: note: in expansion of macro ‘L2SEXP’
+  return jri_putSymbolName(env, L2SEXP(exp));
+                                ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniInherits’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:457:16: note: in expansion of macro ‘L2SEXP’
+   if (inherits(L2SEXP(exp), (char*)c)) res = 1;
+                ^
+In file included from jri.h:6:0,
+                 from Rengine.c:4:
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniCons’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+/usr/share/R/include/Rinternals.h:601:28: note: in definition of macro ‘LCONS’
+ #define LCONS(a, b) lcons((a), (b))  /* language lists */
+                            ^
+Rengine.c:468:36: note: in expansion of macro ‘L2SEXP’
+     l = LCONS((head==0)?R_NilValue:L2SEXP(head), (tail==0)?R_NilValue:L2SEXP(tail));
+                                    ^
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+/usr/share/R/include/Rinternals.h:601:33: note: in definition of macro ‘LCONS’
+ #define LCONS(a, b) lcons((a), (b))  /* language lists */
+                                 ^
+Rengine.c:468:71: note: in expansion of macro ‘L2SEXP’
+     l = LCONS((head==0)?R_NilValue:L2SEXP(head), (tail==0)?R_NilValue:L2SEXP(tail));
+                                                                       ^
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+/usr/share/R/include/Rinternals.h:600:26: note: in definition of macro ‘CONS’
+ #define CONS(a, b) cons((a), (b))  /* data lists */
+                          ^
+Rengine.c:470:35: note: in expansion of macro ‘L2SEXP’
+     l = CONS((head==0)?R_NilValue:L2SEXP(head), (tail==0)?R_NilValue:L2SEXP(tail));
+                                   ^
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+/usr/share/R/include/Rinternals.h:600:31: note: in definition of macro ‘CONS’
+ #define CONS(a, b) cons((a), (b))  /* data lists */
+                               ^
+Rengine.c:470:70: note: in expansion of macro ‘L2SEXP’
+     l = CONS((head==0)?R_NilValue:L2SEXP(head), (tail==0)?R_NilValue:L2SEXP(tail));
+                                                                      ^
+In file included from Rengine.c:4:0:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:472:23: note: in expansion of macro ‘L2SEXP’
+   if (tag) SET_TAG(l, L2SEXP(tag));
+                       ^
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:473:10: note: in expansion of macro ‘SEXP2L’
+   return SEXP2L(l);
+          ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniCAR’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:480:22: note: in expansion of macro ‘L2SEXP’
+         SEXP r = CAR(L2SEXP(exp));
+                      ^
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:481:34: note: in expansion of macro ‘SEXP2L’
+         return (r==R_NilValue)?0:SEXP2L(r);
+                                  ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniCDR’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:490:22: note: in expansion of macro ‘L2SEXP’
+         SEXP r = CDR(L2SEXP(exp));
+                      ^
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:491:34: note: in expansion of macro ‘SEXP2L’
+         return (r==R_NilValue)?0:SEXP2L(r);
+                                  ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniTAG’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:500:22: note: in expansion of macro ‘L2SEXP’
+         SEXP r = TAG(L2SEXP(exp));
+                      ^
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:501:34: note: in expansion of macro ‘SEXP2L’
+         return (r==R_NilValue)?0:SEXP2L(r);
+                                  ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniPutList’:
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:516:21: note: in expansion of macro ‘SEXP2L’
+     if (l<1) return SEXP2L(CONS(R_NilValue, R_NilValue));
+                     ^
+In file included from jri.h:6:0,
+                 from Rengine.c:4:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+/usr/share/R/include/Rinternals.h:600:26: note: in definition of macro ‘CONS’
+ #define CONS(a, b) cons((a), (b))  /* data lists */
+                          ^
+Rengine.c:521:38: note: in expansion of macro ‘L2SEXP’
+         t=CONS((ap[i]==0)?R_NilValue:L2SEXP(ap[i]), t);
+                                      ^
+In file included from Rengine.c:4:0:
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:526:12: note: in expansion of macro ‘SEXP2L’
+     return SEXP2L(t);
+            ^
+Rengine.c: In function ‘Java_org_rosuda_JRI_Rengine_rniGetList’:
+jri.h:25:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define L2SEXP(s) ((SEXP)((jlong)((unsigned long)(s))))
+                    ^
+Rengine.c:533:12: note: in expansion of macro ‘L2SEXP’
+     SEXP e=L2SEXP(exp);
+            ^
+jri.h:21:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ #define SEXP2L(s) ((jlong)(s))
+                    ^
+Rengine.c:560:51: note: in expansion of macro ‘SEXP2L’
+                     dae[i]=(CAR(t)==R_NilValue)?0:SEXP2L(CAR(t));
+                                                   ^
